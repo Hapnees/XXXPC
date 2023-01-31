@@ -1,0 +1,9 @@
+[submodule "XXXPC_CLIENT"]
+	path = XXXPC_CLIENT
+	url = https://github.com/Hapnees/XXXPC_CLIENT
+[submodule "XXXPC_ADMIN"]
+	path = XXXPC_ADMIN
+	url = https://github.com/Hapnees/XXXPC_ADMIN
+[submodule "XXXPC_BACKEND"]
+	path = XXXPC_BACKEND
+	url = https://github.com/Hapnees/XXXPC_BACKEND
