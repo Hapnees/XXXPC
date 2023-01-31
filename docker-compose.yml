@@ -1,0 +1,38 @@
+version: '3.8'
+
+services:
+  database:
+    container_name: database
+    ports:
+      - 5432:5432
+    environment:
+      - POSTGRES_DB=xxxpc
+      - POSTGRES_USER=edward
+      - POSTGRES_PASSWORD=123
+    image: postgres:15.1
+    volumes:
+      - ./XXXPC_BACKEND/pg_data:/pg_data/
+    network_mode: "host"
+
+  backend:
+    container_name: backend
+    build: ./XXXPC_BACKEND
+    ports:
+      - 4000:4000
+    depends_on:
+      - database
+    network_mode: "host"
+
+  client:
+    container_name: client
+    build: ./XXXPC_CLIENT
+    ports:
+      - 3000:3000
+    network_mode: "host"
+
+  admin:
+    container_name: admin
+    build: ./XXXPC_ADMIN
+    ports:
+      - 3001:3001
+    network_mode: "host"
